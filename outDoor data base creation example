@@ -1,0 +1,37 @@
+outDoor data base creation example
+
+CREATE TABLE outDoor.User_Friendlist (
+	UserName varchar(12) NOT NULL,
+	friendslist json NULL,
+	CONSTRAINT User_Friendlist_pk PRIMARY KEY (UserName)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE outDoor.Locations (
+	`Primary Location` BIGINT UNSIGNED auto_increment NOT NULL,
+	Latitude DOUBLE NOT NULL,
+	Longitude DOUBLE NOT NULL,
+	CONSTRAINT Locations_pk PRIMARY KEY (`Primary Location`)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE outDoor.`User` (
+	`User Name` varchar(12) NOT NULL,
+	email varchar(24) NOT NULL,
+	address varchar(50) NOT NULL,
+	DoB DATE NOT NULL,
+	primary_location BIGINT UNSIGNED NOT NULL,
+	friend_list_ID BIGINT UNSIGNED NOT NULL,
+	CONSTRAINT User_pk PRIMARY KEY (`User Name`),
+	CONSTRAINT User_FK FOREIGN KEY (primary_location) REFERENCES outDoor.locations(`Primary Location`),
+	CONSTRAINT User_FK_1 FOREIGN KEY (`User Name`) REFERENCES outDoor.user_friendlist(UserName)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci
+AUTO_INCREMENT=1;
