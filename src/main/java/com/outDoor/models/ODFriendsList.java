@@ -19,10 +19,10 @@ import lombok.NoArgsConstructor;
 public class ODFriendsList {
 	
 	@Id
-	@Column(table = "User_Friendlist", length = 12, nullable = false, unique = true, updatable= false)
+	@Column(table = "User_Link", length = 12, nullable = false)
 	private String userName;
 	
-	@Column(table = "User_Friendlist", name = "friendslist", nullable = false)
+	@Column(table = "User_Link", name = "Linked_User_Name", nullable = false)
 	private JSONObject friendslist;
 	
 
