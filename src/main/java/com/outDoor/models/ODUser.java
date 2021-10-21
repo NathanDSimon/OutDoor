@@ -35,7 +35,7 @@ public class ODUser {
 	@Column(table = "User", name = "primary_location", nullable = false)
 	private Long primaryLocation;
 
-	@Column(table = "User", name = "friend_list_ID", nullable = false)
-	private Long friendListId;
+//	@Column(table = "User", name = "friend_list_ID", nullable = false)
+//	private Long friendListId;
 	
 }
