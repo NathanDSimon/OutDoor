@@ -6,6 +6,8 @@ import com.outDoor.models.ODUser;
 
 public interface ODUserRepository extends JpaRepository<ODUser, String> {
 	
+	ODUser findByUsername(String Username);
+	
 	
 	
 }
