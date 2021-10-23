@@ -3,6 +3,7 @@ package com.outDoor.models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,16 +15,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(name = "Locations")
 public class ODLocations {
 
 	@Id
-	@Column(table = "Locations", nullable = false, unique = true, updatable= false)
+	@Column(nullable = false, unique = true, updatable= false)
 	private Long primaryLocation;
 	
-	@Column(table = "Locations", name = "latitude", nullable = false)
+	@Column(name = "latitude", nullable = false)
 	private Double latitude;
 	
-	@Column(table = "Locations", name = "longitude", nullable = false)
+	@Column(name = "longitude", nullable = false)
 	private Double longitude;
 
 }
