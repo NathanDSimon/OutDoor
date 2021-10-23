@@ -3,6 +3,7 @@ package com.outDoor.models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.json.JSONObject;
 
@@ -16,14 +17,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(name = "user_Link")
 public class ODFriendsList {
 	
 	@Id
-	@Column(table = "User_Link", length = 12, nullable = false)
+	@Column(length = 12, nullable = false)
 	private String userName;
 	
-	@Column(table = "User_Link", name = "Linked_User_Name", nullable = false)
-	private JSONObject friendslist;
+	@Column(name = "Linked_Username", nullable = false)
+	private String friendslist;
 	
 
 }
