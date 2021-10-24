@@ -3,9 +3,8 @@ package com.outDoor.models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
-
-import org.json.JSONObject;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,14 +17,16 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(name = "user_Link")
+@IdClass(ODFriendsListPK.class)
 public class ODFriendsList {
 	
 	@Id
 	@Column(length = 12, nullable = false)
-	private String userName;
+	private String Username;
 	
+	@Id
 	@Column(name = "Linked_Username", nullable = false)
-	private String friendslist;
+	private String LinkedUsername;
 	
 
 }
